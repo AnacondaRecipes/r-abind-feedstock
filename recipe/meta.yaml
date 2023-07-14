@@ -24,9 +24,9 @@ requirements:
   build:
     - {{ posix }}zip               # [win]
   host:
-    - r-base
+    - r-base  {{ r_version }}
   run:
-    - r-base
+    - r-base  {{ r_version }}
 
 test:
   commands:
@@ -47,6 +47,11 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - qwhelan
+
+  anaconda-services:
+    ref:  https://anaconda.zendesk.com/agent/tickets/38329
+    recipe-maintainers:
+      - ianaobi
 
 # Package: abind
 # Version: 1.4-5
